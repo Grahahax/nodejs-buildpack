@@ -9,7 +9,11 @@ install_node_modules() {
     else
       echo "Installing node modules (package.json)"
     fi
+    echo "Going to install"
     npm install --unsafe-perm --userconfig $build_dir/.npmrc 2>&1
+    echo "Installed, going to dedupe"
+    npm dedupe 2>&1
+    echo "Dedupe done"
   else
     echo "Skipping (no package.json)"
   fi
