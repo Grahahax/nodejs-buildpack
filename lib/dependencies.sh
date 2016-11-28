@@ -19,7 +19,7 @@ install_node_modules() {
     npm dedupe 2>&1
     echo "Dedupe done"
     echo "node_modules after dedupe"
-    du -sh mode_modules
+    du -sh node_modules
   else
     echo "Skipping (no package.json)"
   fi
